@@ -689,6 +689,8 @@ static void packet_cb(char *if_name, uint8_t *packet, uint16_t packet_len)
     uint16_t                ether_type;
     uint8_t                *ifmac;
 
+    log_i1905_e("Akshay chk1");
+
     if (packet_len < sizeof(struct ethhdr)) {
         log_i1905_w("Received too short packet from %s, len %d", if_name, packet_len);
         return;
@@ -714,6 +716,7 @@ static void packet_cb(char *if_name, uint8_t *packet, uint16_t packet_len)
         return;
     }
     PLATFORM_FREE_1905_INTERFACE_INFO(x);
+    log_i1905_e("Akshay chk2");
 
     log_i1905_t("New queue message arrived: packet captured on interface %s", if_name);
     log_i1905_t("    Dst address: %s", acu_mac_string(dst_addr));
@@ -725,7 +728,7 @@ static void packet_cb(char *if_name, uint8_t *packet, uint16_t packet_len)
         log_i1905_d("Packet not destined to my AL MAC");
         return;
     }
-
+    log_i1905_e("Akshay chk2");
     switch(ether_type) {
         case ETHERTYPE_LLDP: {
             i1905_lldp_payload_t *payload;
@@ -793,6 +796,7 @@ uint8_t start1905AL(mac_addr al_mac_address, uint8_t map_whole_network_flag,
                     UNUSED char *registrar_interface, i1905_interface_cb_t interface_cb,
                     al1905_cmdu_cb_t cmdu_cb)
 {
+	log_i1905_e("Akshay chk3");
     /* Initialize platform-specific code */
     if (0 == PLATFORM_INIT()) {
         log_i1905_e("Failed to initialize platform");

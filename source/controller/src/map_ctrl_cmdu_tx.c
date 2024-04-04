@@ -579,6 +579,7 @@ int map_send_link_metric_response_error(map_ale_info_t *ale, uint16_t mid, uint8
 /* 1905.1 6.3.8 (type 0x0008) */
 int map_send_autoconfig_response(i1905_cmdu_t *recv_cmdu, bool ale_is_agent)
 {
+	log_ctrl_e("Akshay chk8");
     i1905_al_mac_address_tlv_t       *al_mac_tlv;
     i1905_autoconfig_freq_band_tlv_t *autoconfig_freq_band_tlv;
     i1905_cmdu_t                      cmdu                     = {0};

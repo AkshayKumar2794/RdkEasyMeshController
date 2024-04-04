@@ -79,7 +79,7 @@ static void interface_cb(const char *ifname, bool added)
 int map_ctrl_main(bool ebtables, bool wfa_cert)
 {
     bool enabled;
-
+    log_ctrl_e("Akshay chk5");
     openlog("Multiap_Controller", 0, LOG_DAEMON);
 
     do {

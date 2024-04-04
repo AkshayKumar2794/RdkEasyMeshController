@@ -246,6 +246,7 @@ static cmdu_cbs_t *get_cmdu_cbs(uint16_t cmdu_type)
 ########################################################################*/
 bool map_cmdu_rx_cb(i1905_cmdu_t *cmdu)
 {
+	log_ctrl_e("Akshay chk6");
     cmdu_cbs_t     *cbs         = get_cmdu_cbs(cmdu->message_type);
     const char     *cmdu_name   = i1905_cmdu_type_to_string(cmdu->message_type);
     uint8_t        *src_mac     = cmdu->cmdu_stream.src_mac_addr;
